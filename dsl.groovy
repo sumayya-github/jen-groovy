@@ -91,9 +91,9 @@ description ("This is the job 3 for groovy project")
 
 steps{
 
-shell(''' status=$(curl -o /dev/null -sw "%{http_code}" https://10.0.2.15)
+shell('''status=\$(curl -sL -w "%{http_code}" -I "http://192.168.99.100:30007" -o /dev/null)
 
-if [[$status == 200 ]]
+if [[ \$status == 200 ]]
 
 then
 
