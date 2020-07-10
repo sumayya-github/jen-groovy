@@ -48,8 +48,8 @@ job("Groovy 3")
 {
 description ("This is the job 3 for groovy project")
 steps{
-shell('''status=\$(curl -s -w "%{http_code}" 10.0.2.15:30007 -o /dev/null)
-if [ \$status == 200 ]
+shell('''status=$(curl -s -w "%{http_code}" 10.0.2.15:8080 -o /dev/null)
+if [ $status == 200 ]
 then
 exit 0
 else
