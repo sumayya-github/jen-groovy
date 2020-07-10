@@ -138,3 +138,13 @@ triggers {
    }
 
 }
+buildPipelineView('Groovy Project') {
+    filterBuildQueue()
+    filterExecutors()
+    title('Groovy Pipeline Complete View')
+    displayedBuilds(3)
+    selectedJob('Groovy 1')
+    alwaysAllowManualTrigger()
+    showPipelineParameters()
+    refreshFrequency(60)
+}
