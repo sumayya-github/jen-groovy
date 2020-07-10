@@ -51,9 +51,9 @@ steps{
 shell('''status=\$(curl -s -w "%{http_code}" 10.0.2.15:30007 -o /dev/null)
 if [ \$status == 200 ]
 then
-exit 1
-else
 exit 0
+else
+exit 1
 fi ''')
 }
 triggers {
