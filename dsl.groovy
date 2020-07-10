@@ -97,11 +97,11 @@ if [[$status == 200 ]]
 
 then
 
-exit 0
+exit 1
 
 else
 
-exit 1
+exit 0
 
 fi ''')
 
