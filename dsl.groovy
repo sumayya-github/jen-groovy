@@ -99,9 +99,9 @@ description ("This is the job 3 for groovy project")
 
 steps{
 
-shell(''' export status=$(curl -s -i -w "%{http_code}" -o /dev/null 10.0.2.15:30007/index.html)
+shell('''status=\$(curl -sL -w "%{http_code}" -I "http://10.0.2.15:30007" -o /dev/null)
 
-if [ $status == 200 ]
+if [ \$status == 200 ]
 
 then
 
