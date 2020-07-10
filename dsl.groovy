@@ -3,13 +3,21 @@ job("Groovy 1")
 {
 
  description ("This is my first job for Groovy project")
-
-scm {
-
+ keepDependencies(false)
+ scm {
+ git {
+  remote {
 github ('sumayya-github/jen-groovy','master')
-
+     }
+  }
 }
-
+disabled(false)
+ triggers {
+  scm("* * * * * *"){
+      ignorePostCommitHooks(false)
+       }
+ }
+ concurrentBuild(false)
 steps{
 
 shell('sudo cp -r -v -f * /t6 ')
@@ -91,7 +99,7 @@ description ("This is the job 3 for groovy project")
 
 steps{
 
-shell(''' export status=$(curl -s -i -w "%{http_code}" -o /dev/null 10.0.2.15)
+shell(''' export status=$(curl -s -i -w "%{http_code}" -o /dev/null 10.0.2.15:30007/index.html)
 
 if [ $status == 200 ]
 
