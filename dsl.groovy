@@ -5,11 +5,9 @@ job("Groovy 1")
  description ("This is my first job for Groovy project")
  keepDependencies(false)
  scm {
- git {
-  remote {
 github ('sumayya-github/jen-groovy','master')
      }
-  }
+configure { it / 'triggers' / 'com.cloudbees.jenkins.GitHubPushTrigger' / 'spec' }
 }
 disabled(false)
  triggers {
