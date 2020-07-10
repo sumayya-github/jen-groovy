@@ -91,7 +91,7 @@ description ("This is the job 3 for groovy project")
 
 steps{
 
-shell(''' status=$(curl -o /dev/null -sw "%{http_code}" http://10.0.2.15/index.html)
+shell(''' status=$(curl -o /dev/null -sw "%{http_code}" https://10.0.2.15)
 
 if [[$status == 200 ]]
 
